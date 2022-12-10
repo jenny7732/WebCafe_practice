@@ -1,0 +1,87 @@
+/* HTML 요소의 기본 스타일을 브라우저 간 일관성을 유지하도록 도움 */
+@import url(normalize.css); 
+@import url(reset.css);
+
+/* boder 영역까지 width와 height에 포함해서
+ 우리가 사이즈를 인지하기 더 쉽게 만든다. */
+*, *::before, *::after{
+  box-sizing: border-box; 
+}
+
+body {
+  background: #ffc;
+  font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo",
+    "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+  font-weight: 100;
+  /* width: 940vh; */
+}
+
+.header,.visual, .main, .slogan, .footer, .footer-inner{
+  width: 940px;
+  /* 중앙 정렬하기 */
+  margin: 0 auto;
+}
+
+/* ------------------------------해더------------------------------ */
+.header{
+  background-color: red;
+  height: 15vh;
+  padding: 0 30px;
+}
+
+/* -----------------------------비주얼------------------------------ */
+.visual{
+  background-color: orange;
+  height: 10vh;
+}
+
+/* -----------------------------메인----------------------------------- */
+/* flow-root를 통해 최상위요소로 만들어서
+   뒤에 요소와 독립되게 만들어 float 썼을 때 부모요소에 사용 */
+.main{
+  background-color: yellow;
+  display: flow-root;
+  height: 50vh;
+  padding: 0 15px;
+}
+
+/* main에 padding 좌우 15px, group에 margin 좌우 15px
+   main1,2,3 사이 간격을 동일하게 함 */
+
+.group{
+  float: left;
+  margin: 0 15px; 
+}
+
+.main1{
+  background-color: violet;
+  width: 250px;
+}
+
+.main2{
+  background-color: rgb(236, 76, 236);
+  width: 380px;
+}
+
+.main3{
+  background-color: rgb(206, 19, 206);
+  width: 190px;
+}
+
+/* ------------------------------슬로건---------------------------------*/
+.slogan{
+  background-color: green;
+  height: 10vh;
+}
+
+/* ------------------------------푸터--------------------------------- */
+.footer{
+  background-color: blue;
+  height: 15vh;
+}
+
+.footer-inner{
+  background-color: aqua;
+  height: 15vh;
+  width: 500px;
+}
