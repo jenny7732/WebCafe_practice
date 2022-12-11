@@ -9,24 +9,58 @@
 }
 
 body {
+  color: #212121;
   background: #ffc;
   font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo",
     "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
   font-weight: 100;
-  /* width: 940vh; */
+
 }
 
 .header,.visual, .main, .slogan, .footer, .footer-inner{
   width: 940px;
-  /* 중앙 정렬하기 */
+  /* 페이지를 늘리거나 줄이거나 중앙 정렬하기 auto */
   margin: 0 auto;
 }
 
 /* ------------------------------해더------------------------------ */
 .header{
-  background-color: red;
+  background-color: white;
   height: 15vh;
   padding: 0 30px;
+  position: relative;
+  border-radius: 0 0 15px 15px;
+}
+
+.logo{
+  position: absolute;
+  top: 45px;
+  left: 60px;
+}
+
+.menubar{
+  text-align: right;
+}
+
+/* li 말고 a 태그에 padding을 주는 이유
+   li와 a가 차지하는 공간이 다름 */
+.menubar li{
+  display: inline-block;
+  /* padding: 0 10px; */
+}
+
+/* inherit을 해줘서 inline에서 inline-block으로 만들어줌
+   그러면 padding 위 아래값 적용가능함 */
+.menubar a{
+  background-color: salmon;
+  padding: 10px 10px;
+  text-decoration: none;
+  color: black;
+  display: inherit;
+}
+
+.menubar li:not(:first-child)::before{
+  content: " : ";
 }
 
 /* -----------------------------비주얼------------------------------ */
